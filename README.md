@@ -13,6 +13,12 @@
 ***
 Use `sysctl.conf` for kernel paramaters optimization. I put my `galera.cnf` as well. It has tuned arametes for over datacenter cluster.
 
-In my scenario I had 4 Master nodes and 1 Arbiter node. It eans this cluster can handle 2 nodes failure.
+In my scenario I had 4 Master nodes and 1 Arbiter node(Garb Deamon). It means this cluster can handle 2 nodes failure.
 
-Unfortinoltly 
+GarbD is a single process that acts like a arbiter for our cluster. Maybe it can run as a service too but I didn't.
+
+`apt install galera-arbitrator-3`
+
+To start the GarbD process run this command. The PPID will be 1.
+
+`/usr/bin/garbd --cfg garb_prod.txt`
