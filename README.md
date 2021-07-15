@@ -13,6 +13,6 @@
 ***
 Use `sysctl.conf` for kernel paramaters optimization. I put my `galera.cnf` as well. It has tuned arametes for over datacenter cluster.
 
-In my scenario I had 4 Master nodes and 1 Arbiter node. Iteans this cluster can handle 2 nodes failure.
+In my scenario I had 4 Master nodes and 1 Arbiter node. It eans this cluster can handle 2 nodes failure.
 
 Unfortinoltly 
