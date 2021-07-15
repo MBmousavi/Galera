@@ -1,0 +1,4 @@
+daemon=1
+address="gcomm://node1:4567,node2:4567,node3:4567,node4:4567"
+group="MyCluster"
+log="/var/log/garbd.log"
