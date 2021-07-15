@@ -1,0 +1,33 @@
+[mysqld]
+binlog_format=ROW
+default-storage-engine=innodb
+innodb_autoinc_lock_mode=2
+bind-address=0.0.0.0
+
+# Galera Provider Configuration
+wsrep_on=ON
+wsrep_provider=/usr/lib/galera/libgalera_smm.so
+
+# Galera Cluster Configuration
+wsrep_cluster_name="MyCluster"
+wsrep_cluster_address="gcomm://node1,node2,node3"
+
+# Galera Synchronization Configuration
+wsrep_sst_method=rsync
+wsrep_retry_autocommit=3
+
+# Galera Node Configuration
+wsrep_node_address="x.x.x.x"
+wsrep_node_name="node1"
+
+wsrep_provider_options="socket.ssl_key=/etc/mysql/ssl/server-key.pem;socket.ssl_cert=/etc/mysql/ssl/server-cert.pem;socket.ssl_ca=/etc/mysql/ssl/ca-cert.pem"
+
+# Galera Custome setting for WAN
+wsrep_provider_options="evs.suspect_timeout=PT1M"
+wsrep_provider_options="evs.inactive_timeout=PT1M"
+wsrep_provider_options="evs.send_window=512"
+wsrep_provider_options="evs.user_send_window=512"
+wsrep_provider_options="evs.inactive_check_period=PT30S"
+wsrep_provider_options="gcs.fc_factor=1"
+wsrep_provider_options="gcs.fc_limit=260"
+wsrep_provider_options="gcs.max_packet_size=2097152"
